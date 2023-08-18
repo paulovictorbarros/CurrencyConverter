@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Conversor de moeda</string>
+
+    <string name="currency_brl">Real Brasileiro</string>
+    <string name="currency_usd">Dólar Americano</string>
+    <string name="currency_eur">Euro</string>
+    <string name="currency_jpy">Iene Japonês</string>
+    <string name="currency_gbp">Libra Esterlina</string>
+    <string name="currency_aud">Dólar Australiano</string>
+    <string name="currency_cad">Dólar Canadense</string>
+    <string name="currency_chf">Franco Suíço</string>
+    <string name="currency_cny">Yuan Chinês</string>
+    <string name="currency_sek">Coroa Sueca</string>
+    <string name="text_result">Resultado</string>
+    <string name="bt_convert">Converter</string>
+    <string name="text_value">Insira o valor</string>
+    <string name="choose_a_currency">Escolha uma Moeda</string>
+
+</resources>
