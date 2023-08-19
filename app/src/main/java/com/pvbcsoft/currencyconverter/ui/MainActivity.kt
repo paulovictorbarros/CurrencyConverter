@@ -1,10 +1,12 @@
-package com.pvbcsoft.currencyconverter
+package com.pvbcsoft.currencyconverter.ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import com.google.gson.JsonObject
+import com.pvbcsoft.currencyconverter.api.Endpoint
+import com.pvbcsoft.currencyconverter.network.NetworkUtils
 import retrofit2.Call
 import retrofit2.Response
 import com.pvbcsoft.currencyconverter.databinding.ActivityMainBinding
@@ -74,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                 }
             })
     }
-
 
     private fun getCurrencies() {
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://cdn.jsdelivr.net/")
