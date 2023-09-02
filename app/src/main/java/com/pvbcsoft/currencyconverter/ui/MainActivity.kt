@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val data = response.body()
 
-                    val currenciesList = mutableListOf<String>()
+                    val currenciesMap = mutableMapOf<String, String>()
 
                     data?.keySet()?.forEach { currencyCode ->
                         val currencyNameResId =
@@ -98,22 +98,21 @@ class MainActivity : AppCompatActivity() {
                             return@forEach
                         }
 
-                        val currencyInfo = "$currencyCode - $currencyName"
-                        currenciesList.add(currencyInfo)
+                        currenciesMap[currencyName] = currencyCode
                     }
+
+                    val sortedCurrenciesList = currenciesMap.keys.sorted()
 
                     val adapter = ArrayAdapter(
                         this@MainActivity,
                         android.R.layout.simple_spinner_dropdown_item,
-                        currenciesList
+                        sortedCurrenciesList
                     )
                     binding.spFrom.adapter = adapter
                     binding.spTo.adapter = adapter
 
-                    val defaultFrom =
-                        currenciesList.indexOfFirst { it.startsWith("brl", ignoreCase = true) }
-                    val defaultTo =
-                        currenciesList.indexOfFirst { it.startsWith("usd", ignoreCase = true) }
+                    val defaultFrom = sortedCurrenciesList.indexOf("Real Brasileiro")
+                    val defaultTo = sortedCurrenciesList.indexOf("Dólar Americano")
                     binding.spFrom.setSelection(defaultFrom)
                     binding.spTo.setSelection(defaultTo)
                 } else {

@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Conversor de moeda</string>
+    <string name="text_result">Resultado</string>
+    <string name="text_for">Para</string>
+    <string name="bt_convert">Converter</string>
+    <string name="text_value">Clique aqui para insirir o valor</string>
+    <string name="choose_a_currency">Escolha as Moedas</string>
 
     <string name="currency_brl">Real Brasileiro</string>
     <string name="currency_usd">Dólar Americano</string>
@@ -11,9 +16,16 @@
     <string name="currency_chf">Franco Suíço</string>
     <string name="currency_cny">Yuan Chinês</string>
     <string name="currency_sek">Coroa Sueca</string>
-    <string name="text_result">Resultado</string>
-    <string name="bt_convert">Converter</string>
-    <string name="text_value">Insira o valor</string>
-    <string name="choose_a_currency">Escolha uma Moeda</string>
-
+    <string name="currency_mxn">Peso mexicano</string>
+    <string name="currency_nzd">Dólar da Nova Zelândia</string>
+    <string name="currency_sgd">Dólar de Singapura</string>
+    <string name="currency_hkd">Dólar de Hong Kong</string>
+    <string name="currency_nok">Coroa norueguesa</string>
+    <string name="currency_krw">Won sul-coreano</string>
+    <string name="currency_zar">Rand sul-africano</string>
+    <string name="currency_dkk">Coroa dinamarquesa</string>
+    <string name="currency_pln">Zloty polonês</string>
+    <string name="currency_twd">Novo dólar de Taiwan</string>
+    <string name="currency_thb">Baht tailandês</string>
+    <string name="currency_myr">Ringgit malaio</string>
 </resources>
