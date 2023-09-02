@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
         binding.btConvert.setOnClickListener { convertMoney() }
 
@@ -87,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val data = response.body()
 
-                    val currenciesMap = mutableMapOf<String, String>()
+                    val currenciesList = mutableListOf<String>()
 
                     data?.keySet()?.forEach { currencyCode ->
                         val currencyNameResId =
@@ -98,21 +97,22 @@ class MainActivity : AppCompatActivity() {
                             return@forEach
                         }
 
-                        currenciesMap[currencyName] = currencyCode
+                        val currencyInfo = "$currencyCode - $currencyName"
+                        currenciesList.add(currencyInfo)
                     }
-
-                    val sortedCurrenciesList = currenciesMap.keys.sorted()
 
                     val adapter = ArrayAdapter(
                         this@MainActivity,
                         android.R.layout.simple_spinner_dropdown_item,
-                        sortedCurrenciesList
+                        currenciesList
                     )
                     binding.spFrom.adapter = adapter
                     binding.spTo.adapter = adapter
 
-                    val defaultFrom = sortedCurrenciesList.indexOf("Real Brasileiro")
-                    val defaultTo = sortedCurrenciesList.indexOf("Dólar Americano")
+                    val defaultFrom =
+                        currenciesList.indexOfFirst { it.startsWith("brl", ignoreCase = true) }
+                    val defaultTo =
+                        currenciesList.indexOfFirst { it.startsWith("usd", ignoreCase = true) }
                     binding.spFrom.setSelection(defaultFrom)
                     binding.spTo.setSelection(defaultTo)
                 } else {
